@@ -7,7 +7,7 @@ Please have this repository cloned and set up on your local machine before atten
 - Ensure you have [Node.js](https://nodejs.org/) installed (LTS version).
 - A code editor: [Visual Studio Code](https://code.visualstudio.com/) is mandatory for the workshop.
 - Basic knowledge of JavaScript and Node.js.
-- Fully understand the code in the `index.js` file as we will be working with it during the workshop.
+- Fully understand the code in the [`index.js`](https://github.com/nourgaser-giu/giu-bi-ebd-w2025/blob/main/lab3/index.js) file as we will be working with it during the workshop.
 - (Optional but recommended) Git installed on your machine. You can download it from [here](https://git-scm.com/). Make sure Git Bash is also installed after installing Git.
 - Inside VS Code, install the [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) extension for testing API endpoints.
 - Inside VS Code, make sure running `node -v` in the terminal returns the installed Node.js version. If not, ensure Node.js is correctly installed and added to your system's PATH. If you face any issues please do your due diligence to resolve them by searching online, and as a last resort, reach out to the instructor before the workshop day.
@@ -19,7 +19,7 @@ Please have this repository cloned and set up on your local machine before atten
    git clone https://github.com/nourgaser-giu/giu-bi-ebd-w2025/tree/main/workshop-prep
    ```
 
-> Or download the ZIP file of the repository and extract it to your desired location if you don't have Git installed or prefer not to use it.
+    > Or download the ZIP file of the repository and extract it to your desired location if you don't have Git installed or prefer not to use it.
 
 2. Open the project in Visual Studio Code. (Open VS Code, then go to `File` > `Open Folder...` and select the cloned repository folder.)
 
@@ -32,6 +32,7 @@ Please have this repository cloned and set up on your local machine before atten
    ```
 
 5. Start the application by running:
+
    ```bash
    node index.js
    ```
