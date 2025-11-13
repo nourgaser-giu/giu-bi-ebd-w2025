@@ -1,0 +1,12 @@
+import mongoose from "mongoose";
+
+const listingSchema = new mongoose.Schema({
+    "title": String,
+    "description": String,
+    "image_url": String,
+    "pricePerNight": Number
+})
+
+const Listing = mongoose.model("Listing", listingSchema);
+
+export default Listing;
