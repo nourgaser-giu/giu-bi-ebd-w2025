@@ -1,5 +1,9 @@
 # Template README for BINF 503 Project
-# Find the source file at: [template__README.md](https://github.com/nourgaser-giu/giu-bi-ebd-w2025/blob/main/template__milestone0_README.md)
+
+## Open on GitHub: [template__README.md](https://github.com/nourgaser-giu/giu-bi-ebd-w2025/blob/main/template__milestone0_README.md)
+## Download (ctrl+s to save): [template__README.md](https://raw.githubusercontent.com/nourgaser-giu/giu-bi-ebd-w2025/main/template__milestone0_README.md)
+
+<!-- Delete all of the above for your submission -->
 
 # [Insert Project Name Here]
 
