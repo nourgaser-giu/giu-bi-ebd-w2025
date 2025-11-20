@@ -7,13 +7,8 @@ import AddListingPage from "./pages/AddListingPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import "./App.css";
 
-const initialListings = DUMMY_LISTINGS.map((l) => ({
-  ...l,
-  _id: l._id || crypto.randomUUID(),
-}));
-
 function App() {
-  const [listings, setListings] = useState(initialListings);
+  const [listings, setListings] = useState(DUMMY_LISTINGS);
 
   const handleDelete = (id) => {
     setListings(listings.filter((listing) => listing._id !== id));

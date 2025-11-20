@@ -2,14 +2,10 @@ import { useState } from "react";
 import DUMMY_LISTINGS from "./assets/data";
 import Header from "./components/Header/";
 import "./App.css";
-
-const initialListings = DUMMY_LISTINGS.map((l) => ({
-  ...l,
-  _id: l._id || crypto.randomUUID(),
-}));
+import ListingCard from "./components/ListingCard";
 
 function App() {
-  const [listings, setListings] = useState(initialListings);
+  const [listings, setListings] = useState(DUMMY_LISTINGS);
 
   const handleDelete = (id) => {
     setListings(listings.filter((listing) => listing._id !== id));
