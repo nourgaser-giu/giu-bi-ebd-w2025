@@ -3,11 +3,15 @@
 import express from "express";
 import Listing from "./models/Listing.js";
 import mongoose from "mongoose";
+import cors from "cors";
 
 const app = express();
 
 // Middleware: lets us read JSON from the request body
 app.use(express.json());
+
+// Middleware: allow Cross Origin Resource Sharing (CORS) - allows requests from clients on different domains
+app.use(cors());
 
 // Helper functions
 const addListing = async (listing) => {
@@ -66,7 +70,7 @@ app.delete("/api/listings/:id", async (req, res) => {
 // Start the server
 async function main() {
     // Connect to MongoDB
-    await mongoose.connect("mongodb+srv://nouraly_db_user:99qzv5TezGlBdTpm@cluster0.4f0hpj2.mongodb.net/ebd?appName=Cluster0")
+    await mongoose.connect("mongodb+srv://nouraly_db_user:99qzv5TezGlBdTpm@cluster0.0cqvmmf.mongodb.net/ebd?appName=Cluster0")
     console.log("Connected to MongoDB");
 
     Listing.find().then(listings => {
