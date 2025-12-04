@@ -3,6 +3,7 @@
 import express from "express";
 import Listing from "./models/Listing.js";
 import mongoose from "mongoose";
+import cors from "cors";
 
 const app = express();
 
