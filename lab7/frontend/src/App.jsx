@@ -1,51 +1,48 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
+import { AuthContext } from "./context/AuthContext";
+import { listingAPI } from "./api/listing.api";
 // import DUMMY_LISTINGS from "./assets/data";
 import Header from "./components/Header/";
 import HomePage from "./pages/HomePage";
 import AddListingPage from "./pages/AddListingPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage";
+import AdminPage from "./pages/AdminPage";
 import "./App.css";
-
-const getListings = async () => {
-  const data = await fetch("http://localhost:3000/api/listings");
-  const listings = await data.json();
-  return listings;
-};
-
-const addListing = async (listing) => {
-  await fetch("http://localhost:3000/api/listings", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json", // <--- Very important; tell the server the data is JSON and needs to be parsed as such.
-    },
-    body: JSON.stringify(listing),
-  });
-};
-
-const deleteListing = async (id) => {
-  await fetch(`http://localhost:3000/api/listings/${id}`, {
-    method: "DELETE",
-  });
-};
 
 function App() {
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { loading: authLoading } = useContext(AuthContext);
 
   const loadListings = async () => {
-    const newListings = await getListings();
-    setListings(newListings);
+    try {
+      const newListings = await listingAPI.getListings();
+      setListings(newListings);
+    } catch (error) {
+      console.error("Failed to load listings:", error);
+      setListings([]);
+    }
   };
 
   const handleDelete = async (id) => {
-    await deleteListing(id);
-    await loadListings();
+    try {
+      await listingAPI.deleteListing(id);
+      await loadListings();
+    } catch (error) {
+      console.error("Failed to delete listing:", error);
+    }
   };
 
   const handleAdd = async (newListing) => {
-    await addListing(newListing);
-    await loadListings();
+    try {
+      await listingAPI.createListing(newListing);
+      await loadListings();
+    } catch (error) {
+      console.error("Failed to add listing:", error);
+    }
   };
 
   useEffect(() => {
@@ -53,6 +50,15 @@ function App() {
       setLoading(false);
     });
   }, []);
+
+  if (authLoading) {
+    return (
+      <div className="App">
+        <Header />
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="App">
@@ -65,6 +71,9 @@ function App() {
               element={<HomePage listings={listings} onDelete={handleDelete} />}
             />
             <Route path="/add" element={<AddListingPage onAdd={handleAdd} />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/admin" element={<AdminPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>

@@ -34,7 +34,12 @@ export const login = async (req, res, next) => {
     }
 
     const token = jwt.sign(
-      { id: validUser._id, role: validUser.role },
+      {
+        id: validUser._id,
+        role: validUser.role,
+        username: validUser.username,
+        email: validUser.email,
+      },
       process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
@@ -56,6 +61,18 @@ export const logout = (req, res, next) => {
       .clearCookie("access_token")
       .status(200)
       .json({ message: "User signed out successfully!" });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getCurrentUser = (req, res, next) => {
+  try {
+    if (!req.user) {
+      return next(createError(401, "Not authenticated"));
+    }
+
+    res.status(200).json(req.user);
   } catch (error) {
     next(error);
   }

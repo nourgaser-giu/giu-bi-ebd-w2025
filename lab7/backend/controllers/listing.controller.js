@@ -9,9 +9,12 @@ async function getListings(req, res, next) {
     let listings;
 
     if (userRole === "admin") {
-      listings = await Listing.find();
+      listings = await Listing.find().populate("userId", "username email");
     } else {
-      listings = await Listing.find({ userId: userId });
+      listings = await Listing.find({ userId }).populate(
+        "userId",
+        "username email"
+      );
     }
 
     res.status(200).json(listings);

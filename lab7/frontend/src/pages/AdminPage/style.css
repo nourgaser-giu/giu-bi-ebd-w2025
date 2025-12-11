@@ -1,0 +1,138 @@
+.admin-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 80vh;
+  padding: 40px 20px;
+}
+
+.admin-container {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.admin-container h1 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.welcome {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.admin-actions {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff5f5;
+  border-left: 4px solid #ff6b6b;
+  border-radius: 4px;
+}
+
+.admin-actions h2 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.btn-delete-all {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-delete-all:hover:not(:disabled) {
+  background-color: #ff5252;
+}
+
+.btn-delete-all:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.message.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #2e7d32;
+}
+
+.message.error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #c62828;
+}
+
+.admin-info {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.admin-info h2 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.admin-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-info li {
+  padding: 8px 0;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-info li:last-child {
+  border-bottom: none;
+}
+
+.admin-info strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.btn-home {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-home:hover {
+  background-color: #0056b3;
+}

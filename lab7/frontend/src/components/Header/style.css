@@ -11,14 +11,93 @@ header img {
   height: 50px;
 }
 
-header nav a {
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+  margin-left: 30px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  margin-left: 15px; /* Space out the links */
   transition: opacity 150ms ease;
 }
 
-header nav a:hover {
+.nav-links a:hover {
   opacity: 0.8;
+}
+
+.nav-links .admin-link {
+  color: #ffb347;
+  font-weight: 600;
+}
+
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.username {
+  color: white;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.username strong {
+  margin-left: 5px;
+  color: #ffb347;
+}
+
+.logout-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #ff5252;
+}
+
+.login-link,
+.register-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.login-link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.login-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.register-link {
+  background-color: #ff6b6b;
+}
+
+.register-link:hover {
+  background-color: #ff5252;
 }
