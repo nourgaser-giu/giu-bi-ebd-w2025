@@ -20,7 +20,13 @@ function Header() {
       </Link>
       <nav>
         <div className="nav-links">
-          <Link to="/">Home</Link> |<Link to="/add">Add Listing</Link>
+          <Link to="/">Home</Link>
+          {user && (
+            <>
+              {" | "}
+              <Link to="/add">Add Listing</Link>
+            </>
+          )}
           {user && user.role === "admin" && (
             <>
               {" | "}
