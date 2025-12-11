@@ -1,0 +1,61 @@
+.listing-card {
+  display: flex;
+  gap: 15px;
+  max-width: 650px;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 15px;
+}
+
+.listing-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-content h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.card-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.price {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.delete-button {
+  align-self: flex-end;
+
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
